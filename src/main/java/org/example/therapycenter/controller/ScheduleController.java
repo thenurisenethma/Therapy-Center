@@ -46,6 +46,8 @@ public class ScheduleController implements Initializable {
 
     @FXML
     private TextField txtDate;
+    @FXML
+    private TextField txtScheduleId;
 
     @FXML
     private TextField txtPatient;

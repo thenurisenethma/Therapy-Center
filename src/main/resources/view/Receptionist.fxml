@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.therapycenter.controller.ReceptionistController">
+<AnchorPane fx:id="mainAnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.therapycenter.controller.ReceptionistDashBoardController">
    <children>
       <Label layoutX="308.0" layoutY="91.0" text=" Serenity Mental Health Therapy Center" textFill="#915df8">
          <font>

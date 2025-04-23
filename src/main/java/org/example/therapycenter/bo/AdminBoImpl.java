@@ -1,4 +1,4 @@
 package org.example.therapycenter.bo;
 
-public class bbb {
+public class AdminBoImpl {
 }

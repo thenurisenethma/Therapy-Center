@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ReceptionistController implements Initializable {
+public class ReceptionistDashBoardController implements Initializable {
 
     @FXML
     private Button btnPatient;

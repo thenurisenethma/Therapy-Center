@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -26,5 +27,6 @@
       </TableView>
       <Button fx:id="btnGenerate" layoutX="307.0" layoutY="64.0" mnemonicParsing="false" onAction="#onActionGenerate" prefHeight="25.0" prefWidth="75.0" text="Generate" />
       <ComboBox fx:id="btnReport" layoutX="31.0" layoutY="64.0" prefWidth="150.0" promptText="Choose Report" />
+      <TextField fx:id="txtReportId" layoutX="32.0" layoutY="106.0" />
    </children>
 </AnchorPane>

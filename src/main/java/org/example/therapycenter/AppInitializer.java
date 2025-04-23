@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.therapycenter.configuration.FactoryConfiguration;
 
 import java.io.IOException;
 
@@ -22,5 +23,8 @@ public class AppInitializer extends Application {
         stage.setScene(scene);
         stage.setTitle("Serenity Mental Health Therapy Center");
         stage.show();
+
+        FactoryConfiguration.getInstance();
+        FactoryConfiguration.getSession();
     }
 }

@@ -3,10 +3,7 @@ package org.example.therapycenter.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -40,6 +37,9 @@ public class ReportController implements Initializable {
 
     @FXML
     private TableView<?> tblReport;
+
+    @FXML
+    private TextField txtReportId;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
