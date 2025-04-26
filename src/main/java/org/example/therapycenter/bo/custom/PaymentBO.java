@@ -1,4 +1,4 @@
 package org.example.therapycenter.bo.custom;
 
-public interface LoginBo {
+public interface PaymentBO {
 }

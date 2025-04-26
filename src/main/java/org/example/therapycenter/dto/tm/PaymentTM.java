@@ -1,4 +1,4 @@
-package org.example.therapycenter.dto;
+package org.example.therapycenter.dto.tm;
 
 import lombok.*;
 
@@ -7,11 +7,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class ScheuleDTO {
+public class PaymentTM {
     private String id;
     private String patientName;
-    private String therapistName;
     private String programName;
-    private String date;
-    private String time;
+    private String amount;
+    private String status;
 }

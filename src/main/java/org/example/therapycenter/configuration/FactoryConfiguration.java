@@ -1,24 +1,50 @@
 package org.example.therapycenter.configuration;
 
+import org.example.therapycenter.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.io.IOException;
+import java.util.Properties;
+
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
-    private static SessionFactory session;
+    private SessionFactory sessionFactory;
 
     private FactoryConfiguration() {
-        Configuration configuration = new Configuration().configure();
-        session = configuration.buildSessionFactory();
-    }
+        try{
+            Properties properties = new Properties();
+            properties.load(getClass().getClassLoader().getResourceAsStream("hibernate.properties"));
 
+            Configuration configuration = new Configuration();
+            configuration.setProperties(properties);
+            configuration
+                    .addAnnotatedClass(Patient.class)
+                    .addAnnotatedClass(Therapist.class)
+                    .addAnnotatedClass(TherapyProgram.class)
+                    .addAnnotatedClass(Payment.class)
+                    .addAnnotatedClass(Schedule.class)
+                    .addAnnotatedClass(Report.class)
+                    .addAnnotatedClass(Login.class);
+            ;
+            sessionFactory = configuration.buildSessionFactory();
+        }catch (Exception e){
+            throw new RuntimeException("Failed to load hibernate.properties", e);
+        }
+
+    }
     public static FactoryConfiguration getInstance() {
-        return (factoryConfiguration==null)?factoryConfiguration=new FactoryConfiguration():
-                factoryConfiguration;
+        if (factoryConfiguration == null) {
+            factoryConfiguration = new FactoryConfiguration();
+        }
+        return factoryConfiguration;
     }
-    public static Session getSession() {
-       return session.openSession();
 
+    public Session getSession() {
+        return sessionFactory.openSession();
     }
+
 }
+
+

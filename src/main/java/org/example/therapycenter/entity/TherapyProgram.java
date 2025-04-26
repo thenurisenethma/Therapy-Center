@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "therapy_program")
 public class TherapyProgram implements SuperEntity{
+    @Id
+    @Column(name = "program_id")
     private String id;
     @ManyToOne
     @JoinColumn(name = "therapist_id", referencedColumnName = "therapist_id")

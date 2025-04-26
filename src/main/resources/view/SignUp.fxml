@@ -11,17 +11,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.therapycenter.controller.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.therapycenter.controller.SignUpController">
    <children>
       <Label layoutX="135.0" layoutY="47.0" text="Serenity Mental Health Therapy Center" textFill="#915df8">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboRole" layoutX="60.0" layoutY="226.0" prefWidth="150.0" promptText="Role" />
       <PasswordField fx:id="txtPassword" layoutX="61.0" layoutY="169.0" promptText="Password" />
       <TextField fx:id="txtUserName" layoutX="61.0" layoutY="124.0" promptText="Username" />
-      <Button fx:id="btnSignIn" layoutX="107.0" layoutY="296.0" mnemonicParsing="false" onAction="#onActionSignin" style="-fx-background-color: #B7B1F2;" text="Log in">
+      <Button fx:id="btnSignIn" layoutX="447.0" layoutY="343.0" mnemonicParsing="false" onAction="#onActionSignin" style="-fx-background-color: #B7B1F2;" text="Log in">
          <font>
             <Font size="13.0" />
          </font>
@@ -31,11 +30,12 @@
             <Image url="@../img/therapyc.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnSignUp" layoutX="438.0" layoutY="350.0" mnemonicParsing="false" onAction="#onActionSignUp" style="-fx-background-color: #B7B1F2;" text="Sign Up">
+      <Button fx:id="btnSignUp" layoutX="104.0" layoutY="286.0" mnemonicParsing="false" onAction="#onActionSignUp" style="-fx-background-color: #B7B1F2;" text="Sign Up">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Text layoutX="365.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do not have an Account?" />
+      <Text layoutX="365.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alreay have an Account?" />
+      <ComboBox fx:id="comboRole" layoutX="60.0" layoutY="227.0" prefWidth="150.0" promptText="Role" />
    </children>
 </AnchorPane>

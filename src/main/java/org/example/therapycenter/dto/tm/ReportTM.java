@@ -1,4 +1,4 @@
-package org.example.therapycenter.dto;
+package org.example.therapycenter.dto.tm;
 
 import lombok.*;
 
@@ -7,6 +7,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class ReportDTO {
+public class ReportTM {
     private String id;
 }

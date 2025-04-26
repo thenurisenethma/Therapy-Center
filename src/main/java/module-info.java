@@ -6,9 +6,10 @@ module org.example.therapycenter {
     requires static lombok;
     requires org.hibernate.orm.core;
     requires java.naming;
+    requires java.sql;
 
     opens org.example.therapycenter.controller to javafx.fxml;
     opens org.example.therapycenter to javafx.fxml;
-    opens org.example.therapycenter.entity to jakarta.persistence;
+    opens org.example.therapycenter.entity to org.hibernate.orm.core;
     exports org.example.therapycenter;
 }

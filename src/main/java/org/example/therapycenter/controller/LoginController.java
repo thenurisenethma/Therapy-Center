@@ -8,18 +8,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import org.example.therapycenter.bo.custom.LoginBO;
+import org.example.therapycenter.bo.custom.impl.LoginBOImpl;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
+
+
+    @FXML
+    private Button btnSignUp;
 
     @FXML
     private Button btnSignIn;
@@ -33,6 +36,8 @@ public class LoginController implements Initializable {
     @FXML
     private TextField txtUserName;
 
+    private final LoginBO loginBo = new LoginBOImpl();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> objects = FXCollections.observableArrayList();
@@ -40,12 +45,24 @@ public class LoginController implements Initializable {
         objects.add("Admin");
         comboRole.setItems(objects);
     }
+    @FXML
+    void onActionSignUp(ActionEvent event) throws IOException {
+        Parent load = FXMLLoader.load(getClass().getResource("/view/SignUp.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Sign Up");
+        Scene scene = new Scene(load);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     @FXML
     void onActionSignin(ActionEvent event) throws IOException {
-
+        String username = txtUserName.getText();
+        String password = txtPassword.getText();
         String value = comboRole.getValue();
-        if (value.equals("Receptionist")) {
+
+        if (loginBo.authenticateUser(username, password) && value.equals("Receptionist")) {
             Window window = comboRole.getScene().getWindow();
             window.hide();
             Parent load = FXMLLoader.load(getClass().getResource("/view/Receptionist.fxml"));
@@ -54,7 +71,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(load);
             stage.setScene(scene);
             stage.show();
-        }else {
+        } else if (loginBo.authenticateUser(username, password) && value.equals("Admin")) {
             Window window = comboRole.getScene().getWindow();
             window.hide();
             Parent load = FXMLLoader.load(getClass().getResource("/view/AdminDashBoard.fxml"));
@@ -63,9 +80,15 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(load);
             stage.setScene(scene);
             stage.show();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Login failed! Please check username, password, and role.");
+            alert.showAndWait();
         }
-
     }
+
 
 
 }

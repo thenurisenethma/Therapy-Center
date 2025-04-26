@@ -7,6 +7,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class ReportDTO {
-    private String id;
+public class LoginDTO {
+    private String username;
+    private String password;
+    private String role;
 }
